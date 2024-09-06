@@ -258,7 +258,7 @@ export default function Dashboard({ auth, books, message }) {
                         </div>
 
                         <div className="mt-6 flex justify-end">
-                            <SecondaryButton onClick={closeModal}>Cancel</SecondaryButton>
+                            <SecondaryButton onClick={closeModal_u}>Cancel</SecondaryButton>
 
                             <BlueButton className="ml-3" disabled={processing}>
                                 更新する
@@ -279,8 +279,8 @@ export default function Dashboard({ auth, books, message }) {
                                     <th className='px-2 py-2 border border-gray-400'>タイトル</th>
                                     <th className='px-2 py-2 border border-gray-400'>内容</th>
                                     <th className='px-2 py-2 border border-gray-400'>カテゴリー</th>
-                                    <th className='px-2 py-2 border border-gray-400'></th>
-                                    <th className='px-2 py-2 border border-gray-400'></th>
+                                    <th className='px-2 py-2 border border-gray-400'>-</th>
+                                    <th className='px-2 py-2 border border-gray-400'>-</th>
                                 </tr>
                             </thead>
                             <tbody className='bg-white'>
@@ -290,13 +290,13 @@ export default function Dashboard({ auth, books, message }) {
                                         <td className='border border-gray-400 px-2 py-2'>{book.title}</td>
                                         <td className='border border-gray-400 px-2 py-2'>{book.content}</td>
                                         <td className='border border-gray-400 px-2 py-2'>{book.category}</td>
-                                        <td className='border border-gray-400 px-2 py-2'>
+                                        <td className='border border-gray-400 px-2 py-2 text-center'>
                                             {/* 追記 */}
                                             <GreenButton onClick={() => confirmBookUpdate(book.id, book.title, book.content, book.category)}>
                                                 編集
                                             </GreenButton>
                                         </td>
-                                        <td className='border border-gray-400 px-2 py-2'>
+                                        <td className='border border-gray-400 px-2 py-2 text-center'>
                                             <DangerButton onClick={() => deleteBook(book.id)}>
                                                 削除
                                             </DangerButton>
